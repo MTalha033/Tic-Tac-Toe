@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    /* background-color: #9CC69B; */
+    background-color: #322D4E;
+    color: #F7ECE1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    margin-top: 30px;
+    color: #F7ECE1;
+}
+.container{
+    height: 60vh;
+    width: 70vw;
+    /* border:2px solid red; */
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameBox{
+    width: 60vmin;
+    height: 50vmin;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btn{
+    width: 15vmin;
+    height: 15vmin;
+    margin: 0px 6px 0px 6px;
+    border:none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 6vmin;
+    background-color: #F7ECE1;
+}
+
+#rst, #play{
+    font-size: 18px;
+    border-radius: 2px;
+    color: #F7ECE1;
+    border: 1px solid black;
+    outline: none;
+    text-align: center;
+    background: #413f3f;
+    padding: 10px 12px 10px 12px;
+    cursor: pointer;
+}
+#rst:active, #playAgain:active, #play:active{
+    background: #525252;
+}
+#playAgain{
+    font-size: 16px;
+    border-radius: 2px;
+    color: #F7ECE1;
+    border: 1px solid black;
+    outline: none;
+    text-align: center;
+    background: #413f3f;
+    padding: 8px 11px;
+    cursor: pointer;
+}
+
+#wininfo{
+    position: sticky;
+    top: 20px;
+    display: none;
+
+}
+#turn{
+    display: none;
+}

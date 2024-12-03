@@ -113,7 +113,8 @@ let checkWinner=()=>{
     if(count==9 && w!=1){
         winner.innerText="!!! Game Drawn !!!";
         wininfo.style="display:block";
-        console.log("bhbhig");
+        reset.disabled=true;
+        reset.style="background-color:grey"
     }
 }
 

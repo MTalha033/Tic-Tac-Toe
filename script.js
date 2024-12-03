@@ -26,12 +26,12 @@ let toss=()=>{
     if(a>0.5){
         turn=true;
         playerTurn.innerText="Player X Won The Toss";
-        console.log("Player X Turn");
+        // console.log("Player X Turn");
     }
     else{
        turn=false;
        playerTurn.innerText="Player O Won The Toss";
-       console.log("Player O Turn");
+    //    console.log("Player O Turn");
     }
 }
 
@@ -57,10 +57,11 @@ function playGame(){
 }
 
 
-
+let count=0;
 boxes.forEach((box)=>{
     box.addEventListener('click',()=>{
-       console.log("click");
+        count++;
+    //    console.log("click");
         if(turn){
             box.innerText="X";
             box.style="background-color: #725AC1;color: #F7ECE1;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;";
@@ -77,22 +78,23 @@ boxes.forEach((box)=>{
         checkWinner();
     })
 })
-
+let w=0;
 let checkWinner=()=>{
     for(patt of winpatt){
-        console.log(patt[0],patt[1],patt[2]);
-        console.log(boxes[patt[0]].innerText,
-                   boxes[patt[1]].innerText,
-                   boxes[patt[2]].innerText);
+        // console.log(patt[0],patt[1],patt[2]);
+        // console.log(boxes[patt[0]].innerText,
+        //            boxes[patt[1]].innerText,
+        //            boxes[patt[2]].innerText);
 
         let p1=boxes[patt[0]].innerText;
         let p2=boxes[patt[1]].innerText;
         let p3=boxes[patt[2]].innerText;
         if(p1!="" && p2!="" && p3!=""){
             if(p1===p2 && p2 ===p3){
+                w=1;
                 winner.innerText=("Congratulations! Player "+p1+" Wins!");
                 wininfo.style="display:block";
-                console.log("winner is "+p1);
+                // console.log("winner is "+p1);
                 reset.disabled=true;
                 reset.style="background-color:grey"
 
@@ -104,7 +106,14 @@ let checkWinner=()=>{
             }
             break;
             }
+           
         }
+        
+    }
+    if(count==9 && w!=1){
+        winner.innerText="!!! Game Drawn !!!";
+        wininfo.style="display:block";
+        console.log("bhbhig");
     }
 }
 
@@ -116,6 +125,8 @@ function  resetGame(){
         playerTurn.style="display:none;";
         playBtn.disabled=false;
          playBtn.style="background-color: #413f3f;"
+         count=0;
+         w=0;
         disableBoxes();
 
     }
@@ -129,3 +140,4 @@ function PlayAgain(){
     wininfo.style="display:none";
 
 }
+
